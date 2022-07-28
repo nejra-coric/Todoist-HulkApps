@@ -1,7 +1,7 @@
-package mappers
+package com.hulkapps.restservicetodoapp.mappers
 
-import dto.TaskDTO
-import entity.Task
+import com.hulkapps.restservicetodoapp.dto.TaskDTO
+import com.hulkapps.restservicetodoapp.entity.Task
 
 class TaskMapper: Mapper<TaskDTO, Task> {
     override fun fromEntity(entity: Task): TaskDTO = TaskDTO(

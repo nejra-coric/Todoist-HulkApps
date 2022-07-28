@@ -1,4 +1,4 @@
-package dto
+package com.hulkapps.restservicetodoapp.dto
 
 data class TaskDTO(
     var id: Int,

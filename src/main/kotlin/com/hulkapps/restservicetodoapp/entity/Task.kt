@@ -1,4 +1,4 @@
-package entity
+package com.hulkapps.restservicetodoapp.entity
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
