@@ -1,8 +1,10 @@
 package com.hulkapps.restservicetodoapp.mappers
 
 import com.hulkapps.restservicetodoapp.dto.TaskDTO
-import com.hulkapps.restservicetodoapp.entity.Task
+import com.hulkapps.restservicetodoapp.dto.Task
+import org.springframework.stereotype.Service
 
+@Service
 class TaskMapper: Mapper<TaskDTO, Task> {
     override fun fromEntity(entity: Task): TaskDTO = TaskDTO(
         entity.id,
@@ -12,7 +14,7 @@ class TaskMapper: Mapper<TaskDTO, Task> {
 
 
 
-    override fun fromDTO(domain: TaskDTO): Task = Task(
+    override fun toEntity(domain: TaskDTO): Task = Task(
         domain.id,
         domain.title,
         domain.description
