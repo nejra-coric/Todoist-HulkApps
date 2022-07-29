@@ -11,4 +11,9 @@ class ExceptionsHandler {
         val error = ApiError(exception.message)
         return ResponseEntity(error, error.status)
     }
+    @ExceptionHandler(TaskException::class)
+    fun taskExceptionHandler(exception: Exception): ResponseEntity<ApiError> {
+        val error = ApiError(exception.message)
+        return ResponseEntity(error, error.status)
+    }
 }
