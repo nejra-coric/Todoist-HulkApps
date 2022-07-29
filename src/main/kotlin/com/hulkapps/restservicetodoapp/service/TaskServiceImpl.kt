@@ -36,9 +36,9 @@ class TaskServiceImpl (
     // Get pojedinacnih taskova
     override fun getTask(id: Int): TaskDTO {
         val optionalTask = taskRepository.findById(id)
-        val movie = optionalTask.orElseThrow {
+        val task = optionalTask.orElseThrow {
             TaskException("Movie with $id is not present in the server")
         }
-        return taskMapper.fromEntity(movie)
+        return taskMapper.fromEntity(task)
     }
 }
