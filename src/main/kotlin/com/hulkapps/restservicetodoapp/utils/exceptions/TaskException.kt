@@ -1,4 +1,5 @@
 package com.hulkapps.restservicetodoapp.utils.exceptions
 
-class TaskException {
-}
+import java.lang.Exception
+
+class TaskException(override val message: String?): Exception(message)
