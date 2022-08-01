@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController
 class TaskResource(
     private val taskService: TaskService
 ) {
-   @PostMapping
+   @PostMapping("/tasks}")
    fun createTask(@RequestBody taskDTO: TaskDTO): ResponseEntity<TaskDTO> {
        return ResponseEntity(taskService.createTask(taskDTO), HttpStatus.CREATED)
    }
-   @GetMapping
+   @GetMapping("/tasks")
    // Deklaracija GET/ Endpointa
    fun getTasks(): ResponseEntity<List<TaskDTO>>  = ResponseEntity.ok(taskService.getTasks())
 
