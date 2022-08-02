@@ -10,4 +10,7 @@ interface TaskService {
     fun getTasks(): List<TaskDTO>
 
     fun getTask(id: Int): TaskDTO
+    fun updateTask(taskDTO: TaskDTO): TaskDTO
+    fun deleteTask(id: Int)
+
 }

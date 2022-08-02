@@ -41,4 +41,24 @@ class TaskServiceImpl (
         }
         return taskMapper.fromEntity(task)
     }
+
+    override fun updateTask(taskDTO: TaskDTO): TaskDTO {
+        val exists = taskRepository.existsById(taskDTO.id)
+
+        if (!exists)
+            throw TaskException("Task with ${taskDTO.id} does not exist")
+
+        taskRepository.save(taskMapper.toEntity(taskDTO))
+
+        return taskDTO
+    }
+
+    override fun deleteTask(id: Int) {
+        val exists = taskRepository.existsById(id)
+
+        if (!exists)
+            throw TaskException("Task you want to delete does not exist")
+
+        taskRepository.deleteById(id)
+    }
 }
