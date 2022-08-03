@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RestController
 class TaskResource(
     private val taskService: TaskService
 ) {
-   @PostMapping
+   @PostMapping("/epics/tasks")
    fun createTask(@RequestBody taskDTO: TaskDTO): ResponseEntity<TaskDTO> {
        return ResponseEntity(taskService.createTask(taskDTO), HttpStatus.CREATED)
    }
-   @GetMapping
+   @GetMapping("/epics/tasks")
    // Deklaracija GET/ Endpointa
    fun getTasks(): ResponseEntity<List<TaskDTO>>  = ResponseEntity.ok(taskService.getTasks())
 
-   @GetMapping("/{id}")
+   @GetMapping("/epics/tasks/{id}")
    // Pojedinacno po ID-u
    fun getTask(@PathVariable id: Int) = ResponseEntity.ok(taskService.getTask(id))
 
@@ -33,7 +33,7 @@ class TaskResource(
     fun updateTask(@RequestBody taskDTO: TaskDTO): ResponseEntity<TaskDTO> =
         ResponseEntity.ok(taskService.updateTask(taskDTO))
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/epics/tasks/{id}")
     fun deleteTask(@PathVariable id: Int): ResponseEntity<Unit> =
         ResponseEntity(taskService.deleteTask(id), HttpStatus.NO_CONTENT)
 

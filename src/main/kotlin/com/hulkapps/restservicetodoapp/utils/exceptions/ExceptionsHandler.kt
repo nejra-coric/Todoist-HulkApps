@@ -16,4 +16,9 @@ class ExceptionsHandler {
         val error = ApiError(exception.message)
         return ResponseEntity(error, error.status)
     }
+    @ExceptionHandler(EpicException::class)
+    fun epicExceptionHandler(exception: EpicException): ResponseEntity<ApiError> {
+        val error = ApiError(exception.messages)
+        return ResponseEntity(error, error.status)
+    }
 }
