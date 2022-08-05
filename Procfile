@@ -1,1 +1,1 @@
-web: java -jar build/libs/restservice-todoapp.jar --server.port=$PORT
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar build/libs/*.jar

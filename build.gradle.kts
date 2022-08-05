@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.com.intellij.openapi.vfs.StandardFileSystems.jar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -16,6 +17,7 @@ repositories {
 	mavenCentral()
 }
 
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -32,6 +34,13 @@ tasks.withType<KotlinCompile> {
 		jvmTarget = "17"
 	}
 }
+
+
+tasks.jar {
+	enabled = false
+}
+
+
 
 tasks.withType<Test> {
 	useJUnitPlatform()
