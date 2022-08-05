@@ -33,10 +33,6 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
-tasks.register<GradleBuild>("cleanBuildPublish") {
-	tasks = listOf("clean", "build", "publish")
-}
-
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
