@@ -1,5 +1,6 @@
 package com.hulkapps.restservicetodoapp.entity
 
+import com.hulkapps.restservicetodoapp.dto.Task
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType

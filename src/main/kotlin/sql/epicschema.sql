@@ -2,5 +2,6 @@ CREATE TABLE IF NOT EXISTS epics (
     id NUMBER(3) PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(48) NOT NULL,
     slug VARCHAR(48) NOT NULL,
-    conntent VARCHAR(255) NOT NULL
+    conntent VARCHAR(255) NOT NULL,
+    tasks VARRAY
 )
