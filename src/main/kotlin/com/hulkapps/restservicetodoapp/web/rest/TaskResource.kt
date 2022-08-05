@@ -5,6 +5,7 @@ import com.hulkapps.restservicetodoapp.service.TaskService
 import org.apache.coyote.Response
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
+import javax.servlet.http.HttpServletResponse
 
 @RestController
 class TaskResource(
@@ -21,6 +23,7 @@ class TaskResource(
    fun createTask(@RequestBody taskDTO: TaskDTO): ResponseEntity<TaskDTO> {
        return ResponseEntity(taskService.createTask(taskDTO), HttpStatus.CREATED)
    }
+
    @GetMapping("/epics/tasks")
    // Deklaracija GET/ Endpointa
    fun getTasks(): ResponseEntity<List<TaskDTO>>  = ResponseEntity.ok(taskService.getTasks())
