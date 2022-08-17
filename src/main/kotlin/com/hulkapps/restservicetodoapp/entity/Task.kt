@@ -11,5 +11,6 @@ data class Task(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Int,
     var title: String,
-    var description: String
+    var description: String,
+    var priority: String
 )

@@ -9,7 +9,8 @@ class TaskMapper: Mapper<TaskDTO, Task> {
     override fun fromEntity(entity: Task): TaskDTO = TaskDTO(
         entity.id,
         entity.title,
-        entity.description
+        entity.description,
+        entity.priority
     )
 
 
@@ -17,6 +18,7 @@ class TaskMapper: Mapper<TaskDTO, Task> {
     override fun toEntity(domain: TaskDTO): Task = Task(
         domain.id,
         domain.title,
-        domain.description
+        domain.description,
+        domain.priority
     )
 }
